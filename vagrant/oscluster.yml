@@ -1,0 +1,19 @@
+---
+# OpenSearch variables
+opensearch_hostgroup: "os-cluster"
+opensearch_cluster_name: "os-vagrant"
+opensearch_use_dummy_pki: yes
+opensearch_admin_password: "password"
+opensearch_kibanaserver_password: "kibana"
+
+opensearch_install_java: true
+opensearch_bootstrap_cluster: true
+
+# specific for vagrant/VBox with Ubuntu
+opensearch_host_address: "{{ ansible_enp0s8.ipv4.address }}"
+# needed for vagrant
+opensearch_update_hosts_file: true
+opensearch_dashboards_update_hosts_file: true
+
+# Dashboard variables (should vault encrypt key in production)
+opensearch_dashboards_hostgroup: "os-dashboards"
